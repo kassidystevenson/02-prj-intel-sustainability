@@ -16,113 +16,113 @@ body {
 /* 🔷 Hero Section */
 /* The hero section uses a blue gradient background for Intel branding */
 .hero {
-  background: linear-gradient(135deg, #0071c5, #0056a0); /* Intel blue gradient */
+  background: linear-gradient(135deg, #0071c5, #0056a0); /* Intel brand colors */
   color: white;
+  padding: 80px 20px;
   text-align: center;
-  padding: 60px 20px; /* Space above and below content */
   position: relative;
+}
+
+/* Container for hero content to center and limit width */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Logo image sizing and spacing */
 .logo {
-  max-width: 150px; /* Logo won't be larger than 150px wide */
-  margin-bottom: 20px; /* Space below the logo */
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 30px;
 }
 
 /* Headline uses a classic serif font, bold, and large for emphasis */
 .headline {
   font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
   font-weight: bold;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #ffffff; /* White text for contrast */
+  margin-bottom: 15px;
+  color: #ffffff;
 }
 
 /* Subheading uses the same serif font, lighter color for contrast */
 .subheading {
   font-family: 'Times New Roman', Times, serif;
+  font-size: 1.4rem;
   font-weight: 400;
-  font-size: 1.2rem;
-  color: #dbe9f4; /* Light blue for subtlety */
+  color: #dbe9f4;
+  line-height: 1.5;
 }
 
 /* 📅 Timeline Section */
-/* Timeline section background is a very light blue */
 .timeline-section {
-  padding: 60px 20px;
   background-color: #f2f8fd;
+  padding: 60px 20px;
 }
 
-/* Timeline container uses flexbox for horizontal scrolling on large screens */
+/* Flexbox Timeline Container */
 .timeline-container {
-  display: flex; /* Use flexbox to align milestone cards in a row */
-  align-items: flex-start; /* Align cards to the top */
-  gap: 20px; /* Space between cards */
-  overflow-x: auto; /* Enable horizontal scroll if needed */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   padding-bottom: 20px;
-  scroll-snap-type: x mandatory; /* Snap cards into place when scrolling */
 }
 
-/* Each milestone card styled for Intel look */
+/* Timeline Cards */
 .milestone-card {
-  background: #ffffff; /* White background for clarity */
-  border-left: 5px solid #0071c5; /* Intel blue accent */
-  padding: 20px; /* Space inside the card */
-  min-width: 250px; /* Minimum width for each card */
-  flex-shrink: 0; /* Prevent cards from shrinking too small */
-  scroll-snap-align: start; /* Snap each card to the start */
-  border-radius: 8px; /* Rounded corners */
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
-  color: #333f48; /* Intel-like text color */
+  flex: 0 0 auto;
+  min-width: 260px;
+  background: #ffffff;
+  border-left: 5px solid #0071c5;
+  border-radius: 8px;
+  padding: 20px;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Add a shadow and lift effect on hover for interactivity */
 .milestone-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Milestone title uses serif font and Intel blue */
+/* Card Content */
 .milestone-card h3 {
-  font-family: 'Times New Roman', Times, serif; /* Serif font for headings */
+  font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
-  color: #0056a0; /* Intel blue */
+  color: #0056a0;
   font-size: 1.5rem;
-  margin-bottom: 8px; /* Space below the heading */
 }
 
-/* Summary text is blue and bold for emphasis */
 .milestone-card .summary {
   font-weight: 500;
-  color: #0071c5; /* Intel blue */
+  color: #0071c5;
   margin: 10px 0;
 }
 
-/* Details are hidden by default, shown on hover for interactivity */
 .milestone-card .details {
   font-size: 0.9rem;
   color: #333f48;
-  display: none; /* Hide details by default */
-  margin-top: 8px; /* Space above details */
+  display: none;
 }
 
-/* Show details when hovering over the card */
 .milestone-card:hover .details {
-  display: block; /* Show details on hover */
+  display: block;
 }
 
-/* Responsive Layout: stack timeline vertically on small screens */
+/* Mobile: Stack Vertically */
 @media (max-width: 768px) {
   .timeline-container {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: stretch; /* Cards take full width */
-    overflow-x: visible; /* Remove horizontal scroll */
+    flex-direction: column;
+    overflow-x: hidden;
   }
 
   .milestone-card {
-    min-width: 100%; /* Cards take full width */
+    min-width: 100%;
   }
 }
 

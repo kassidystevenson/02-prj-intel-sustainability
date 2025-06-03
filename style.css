@@ -16,11 +16,16 @@ body {
 /* 🔷 Hero Section */
 /* The hero section uses a blue gradient background for Intel branding */
 .hero {
-  background: linear-gradient(135deg, #0071c5, #0056a0); /* Intel brand colors */
+  background: linear-gradient(120deg, #0071c5 0%, #00c6fb 50%, #0056a0 100%);
   color: white;
-  padding: 80px 20px;
+  padding: 90px 0 90px 0;
   text-align: center;
   position: relative;
+  box-shadow: 0 8px 32px rgba(0, 113, 197, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
 }
 
 /* Container for hero content to center and limit width */
@@ -29,11 +34,33 @@ body {
   margin: 0 auto;
 }
 
+/* Create a column for hero content */
+.hero-column {
+  background: rgba(255,255,255,0.10); /* subtle overlay for contrast */
+  border-radius: 18px;
+  padding: 40px 30px;
+  max-width: 400px;
+  margin: 0 20px;
+  box-shadow: 0 4px 24px rgba(0,113,197,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Logo image sizing and spacing */
 .logo {
   max-width: 180px;
   height: auto;
   margin-bottom: 30px;
+}
+
+.headline {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,113,197,0.15);
 }
 
 /* Headline uses a classic serif font, bold, and large for emphasis */
@@ -48,10 +75,11 @@ body {
 /* Subheading uses the same serif font, lighter color for contrast */
 .subheading {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #dbe9f4;
   line-height: 1.5;
+  margin-bottom: 0;
 }
 
 /* 📅 Timeline Section */
@@ -64,13 +92,12 @@ body {
 .timeline-container {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: auto; /* Enables horizontal scroll */
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   padding-bottom: 20px;
+  /* Smooth scrolling for touch devices */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Timeline Cards */
@@ -117,12 +144,28 @@ body {
 /* Mobile: Stack Vertically */
 @media (max-width: 768px) {
   .timeline-container {
-    flex-direction: column;
-    overflow-x: hidden;
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: hidden;     /* Remove horizontal scroll */
   }
-
   .milestone-card {
-    min-width: 100%;
+    min-width: 100%;        /* Cards take full width */
+  }
+}
+
+/* Responsive: make hero column full width on small screens */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 0;
+  }
+  .hero-column {
+    max-width: 95%;
+    padding: 20px 10px;
+  }
+  .headline {
+    font-size: 2rem;
+  }
+  .logo {
+    max-width: 120px;
   }
 }
 

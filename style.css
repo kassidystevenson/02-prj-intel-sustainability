@@ -55,7 +55,8 @@ body {
 
 /* Timeline container uses flexbox for horizontal scrolling on large screens */
 .timeline-container {
-  display: flex; /* Arrange milestone cards in a row */
+  display: flex; /* Use flexbox to align milestone cards in a row */
+  align-items: flex-start; /* Align cards to the top */
   gap: 20px; /* Space between cards */
   overflow-x: auto; /* Enable horizontal scroll if needed */
   padding-bottom: 20px;
@@ -66,13 +67,15 @@ body {
 .milestone-card {
   background: #ffffff; /* White background for clarity */
   border-left: 5px solid #0071c5; /* Intel blue accent */
-  padding: 20px;
+  padding: 20px; /* Space inside the card */
   min-width: 250px; /* Minimum width for each card */
   flex-shrink: 0; /* Prevent cards from shrinking too small */
   scroll-snap-align: start; /* Snap each card to the start */
   border-radius: 8px; /* Rounded corners */
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
+  color: #333f48; /* Intel-like text color */
 }
 
 /* Add a shadow and lift effect on hover for interactivity */
@@ -83,16 +86,17 @@ body {
 
 /* Milestone title uses serif font and Intel blue */
 .milestone-card h3 {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif; /* Serif font for headings */
   font-weight: bold;
-  color: #0056a0;
+  color: #0056a0; /* Intel blue */
   font-size: 1.5rem;
+  margin-bottom: 8px; /* Space below the heading */
 }
 
 /* Summary text is blue and bold for emphasis */
 .milestone-card .summary {
   font-weight: 500;
-  color: #0071c5;
+  color: #0071c5; /* Intel blue */
   margin: 10px 0;
 }
 
@@ -100,18 +104,20 @@ body {
 .milestone-card .details {
   font-size: 0.9rem;
   color: #333f48;
-  display: none;
+  display: none; /* Hide details by default */
+  margin-top: 8px; /* Space above details */
 }
 
 /* Show details when hovering over the card */
 .milestone-card:hover .details {
-  display: block;
+  display: block; /* Show details on hover */
 }
 
 /* Responsive Layout: stack timeline vertically on small screens */
 @media (max-width: 768px) {
   .timeline-container {
     flex-direction: column; /* Stack cards vertically */
+    align-items: stretch; /* Cards take full width */
     overflow-x: visible; /* Remove horizontal scroll */
   }
 
